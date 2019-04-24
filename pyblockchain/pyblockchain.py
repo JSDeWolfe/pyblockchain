@@ -260,7 +260,7 @@ def register_nodespost():
     print("nodes is "+nodes)
     if nodes is None:
         return "Error: Please supply a valid list of nodes", 400
-
+    print("nodes debug "+nodes)
     blockchain.register_node(nodes)
     #for node in nodes:
     #    blockchain.register_node(node)
