@@ -271,9 +271,8 @@ def register_nodespost():
 
 @app.route('/nodes/register', methods=['GET'])
 def register_nodesget():
-    #need to switch links and have get
     response = {
-        'message': 'New nodes have been added',
+        'message': 'New nodes have been added GET',
         'total_nodes': list(blockchain.nodes),
     }
     return render_template('home.html',respRegister=response), 201
