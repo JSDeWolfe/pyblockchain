@@ -22,7 +22,7 @@ class Blockchain(object):
         Add a new node to the list of nodes
         :param address: Address of node. Eg. 'http://192.168.0.5:5000'
         """
-	self.nodes.add(address)
+        self.nodes.add(address)
         #parsed_url = urlparse(address)
         #if parsed_url.netloc:
         #    self.nodes.add(parsed_url.netloc)
