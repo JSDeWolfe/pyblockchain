@@ -22,7 +22,7 @@ class Blockchain(object):
         Add a new node to the list of nodes
         :param address: Address of node. Eg. 'http://192.168.0.5:5000'
         """
-        self.nodes.add(address)
+        self.nodes.append(address)
         #parsed_url = urlparse(address)
         #if parsed_url.netloc:
         #    self.nodes.add(parsed_url.netloc)
@@ -272,7 +272,7 @@ def register_nodespost():
 @app.route('/nodes/register', methods=['GET'])
 def register_nodesget():
     response = {
-        'message': 'New nodes have been added GET',
+        'message': 'New nodes have been added',
         'total_nodes': list(blockchain.nodes),
     }
     return render_template('home.html',respRegister=response), 201
