@@ -7,6 +7,7 @@ from uuid import uuid4
 from flask import Flask, jsonify, request, render_template
 from urllib.parse import urlparse
 import os
+#https://www.therealtomrose.com/how-to-debug-python-or-django-in-heroku/
 
 class Blockchain(object):
 
@@ -256,6 +257,7 @@ def register_nodespost():
         return "None Values"
 
     nodes = values.get('nodes')
+    print("nodes is "+nodes)
     if nodes is None:
         return "Error: Please supply a valid list of nodes", 400
 
