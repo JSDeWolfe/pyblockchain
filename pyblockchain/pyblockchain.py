@@ -298,6 +298,11 @@ def consensus():
 
     return render_template('home.html',resp3=json.dumps(response)), 200
 
+@app.route('/chaintest', methods=['GET'])
+def chaintest():
+    response = blockchain.chain
+    return jsonify(response), 200
+
 
 
 if __name__ == '__main__':
