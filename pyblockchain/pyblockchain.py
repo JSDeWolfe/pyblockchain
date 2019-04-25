@@ -321,7 +321,7 @@ def posttransaction():
 
 
 @app.route('/posttransaction', methods=['GET'])
-def posttransaction():
+def getposttransaction():
     values = request.get_json()
     return jsonify(values), 200
 
