@@ -303,6 +303,10 @@ def chaintest():
     response = blockchain.chain
     return jsonify(response), 200
 
+@app.route('/posttransaction', methods=['POST'])
+def chaintest():
+    values = request.get_json()
+    return jsonify(values), 200
 
 
 if __name__ == '__main__':
