@@ -316,8 +316,7 @@ def posttransaction():
     index = blockchain.new_transaction(values['sender'], values['recipient'], values['amount'])
 
     response = {'message': f'Transaction will be added to Block {index}'}
-    return "response string", 201
-    #return jsonify(response), 201
+    return jsonify(response), 201
 
 
 
