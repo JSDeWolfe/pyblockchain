@@ -304,7 +304,7 @@ def chaintest():
     return jsonify(response), 200
 
 @app.route('/posttransaction', methods=['POST'])
-def chaintest():
+def posttransaction():
     values = request.get_json()
     return jsonify(values), 200
 
