@@ -322,7 +322,7 @@ def posttransaction():
 @app.route('/queryother', methods=['GET'])
 def queryother():
     r = requests.get('https://pyblockchain2.herokuapp.com/getchain').json()
-    return render_template('home.html',respQuery=r), 201
+    return render_template('home.html',respQuery=r.headers['content-type']), 201
 
 
 @app.route('/posttransaction', methods=['GET'])
