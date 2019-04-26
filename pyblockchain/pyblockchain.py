@@ -319,6 +319,11 @@ def posttransaction():
     return jsonify(response), 201
 
 
+@app.route('/queryother', methods=['GET'])
+def queryother():
+    r = requests.get('https://pyblockchain2.herokuapp.com/getchain').json()
+    return render_template('home.html',respQuery=r), 201
+
 
 @app.route('/posttransaction', methods=['GET'])
 def getposttransaction():
