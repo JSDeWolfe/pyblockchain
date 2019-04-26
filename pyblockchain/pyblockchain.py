@@ -334,6 +334,11 @@ def getposttransaction():
     values = request.get_json()
     return jsonify(values), 200
 
+@app.route('/getbalance', methods=['GET'])
+def getbalance():
+    values = {'4':4}
+    return jsonify(values), 200  
+
 
 if __name__ == '__main__':
     from argparse import ArgumentParser
