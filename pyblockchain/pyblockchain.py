@@ -324,6 +324,10 @@ def queryother():
     #r is text by default, checked with respQuery=r.headers['content-type'] 
     return render_template('home.html',respQuery=r), 201
 
+@app.route('/getnodes', methods=['GET'])
+def getnodes():
+    msg = {'Chain State':'nodes', 'nodes':blockchain.nodes}
+    return jsonify(msg), 200
 
 @app.route('/posttransaction', methods=['GET'])
 def getposttransaction():
