@@ -334,9 +334,10 @@ def getposttransaction():
     values = request.get_json()
     return jsonify(values), 200
 
+#https://www.geeksforgeeks.org/get-post-requests-using-python/
 @app.route('/getbalance', methods=['GET'])
 def getbalance():
-    values = {'4':4}
+    values = request.get_json()
     return jsonify(values), 200  
 
 
