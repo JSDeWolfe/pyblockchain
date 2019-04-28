@@ -326,7 +326,7 @@ def queryother():
 
 @app.route('/getnodes', methods=['GET'])
 def getnodes():
-    msg = {'Chain State':'nodes', 'nodes':blockchain.nodes}
+    msg = {'Chain State':'nodes', 'nodes' : list(blockchain.nodes)}
     return jsonify(msg), 200
 
 @app.route('/posttransaction', methods=['GET'])
