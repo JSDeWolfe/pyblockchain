@@ -328,7 +328,12 @@ def queryother():
 
 @app.route('/getnodes', methods=['GET'])
 def getnodes():
-    msg = {'Chain State':'nodes', 'nodes' : list(blockchain.nodes)}
+    msg = {
+        'message': 'New nodes have been added',
+        'len(blockchain.nodes)': len(blockchain.nodes),
+        'total_nodes not list': blockchain.nodes,
+        'total_nodes as list()': list(blockchain.nodes),
+    }
     return jsonify(msg), 200
 
 @app.route('/posttransaction', methods=['GET'])
