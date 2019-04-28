@@ -275,7 +275,9 @@ def register_nodespost():
 def register_nodesget():
     response = {
         'message': 'New nodes have been added',
-        'total_nodes': list(blockchain.nodes),
+        'len(blockchain.nodes)': len(blockchain.nodes),
+        'total_nodes not list': blockchain.nodes,
+        'total_nodes as list()': list(blockchain.nodes),
     }
     return render_template('home.html',respRegister=response), 201
 
