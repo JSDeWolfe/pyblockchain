@@ -23,11 +23,6 @@ class Blockchain(object):
 
 
     def valid_chain(self, chain):
-        """
-        Determine if a given blockchain is valid
-        :param chain: A blockchain
-        :return: True if valid, False if not
-        """
 
         last_block = chain[0]
         current_index = 1
@@ -213,7 +208,6 @@ def new_transaction():
     if request.method == 'POST':
         values = request.get_json()
 
-        # Check that the required fields are in the POST'ed data
         required = ['sender', 'recipient', 'amount']
         if not all(k in values for k in required):
             return 'Missing values', 400
