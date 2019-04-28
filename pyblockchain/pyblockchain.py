@@ -234,20 +234,33 @@ def full_chain():
 
 @app.route('/nodes/register', methods=['POST'])
 def register_nodespost():
+#test self add error, make new condition for if nodes empty
     values = request.get_json()
     if values is None:
         return jsonify({'Error': 'None values'}), 400
     node = values.get('nodes')
+    print("node variable retrieved from json: "+node)
+    print("blockchain deploynode property "+blockchain.deploynode)
+    print("node == deploynode property test: ")
+    print(node==blockchain.deploynode)
     if node is None:
         return jsonify({'Error': 'Please supply a valid list of nodes'}), 400
     if node == blockchain.deploynode:
         return jsonify({'Error': 'Self node added'}), 400
 
     listcheck = blockchain.nodes
+    print("listcheck variable")
+    print(*listcheck)
     listcheck.append(node)
-
+    print("list check after appending node")
+    print(*listcheck)
+    print("len(blockchain-nodes)")
+    print(len(blockchain.nodes))
+    print("len-set-listcheck")
+    print(len(set(listcheck)))
     if (len(blockchain.nodes) == len(set(listcheck))):
         return jsonify({'Error': 'Node exists'}), 400
+        
     blockchain.register_node(node)
 
     response = {
