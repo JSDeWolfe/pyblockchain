@@ -16,7 +16,7 @@ class Blockchain(object):
         self.current_transactions = []
         self.nodes = []
         self.new_block(previous_hash='1', proof=100)
-        self.deploynode = "https://pyblockchain.herokuapp.com/"
+        self.deploynode = "https://pyblockchain.herokuapp.com"
 
     def register_node(self, address):
         self.nodes.append(address)
@@ -258,9 +258,9 @@ def register_nodespost():
     print(len(blockchain.nodes))
     print("len-set-listcheck")
     print(len(set(listcheck)))
-    if (len(blockchain.nodes) == len(set(listcheck))):
+    if ((len(blockchain.nodes) == len(set(listcheck))) and (len(blockchain.nodes)>0)):
         return jsonify({'Error': 'Node exists'}), 400
-        
+
     blockchain.register_node(node)
 
     response = {
